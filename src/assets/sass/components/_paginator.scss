@@ -1,0 +1,49 @@
+.p-paginator {
+  @apply bg-transparent text-gray-400 border-0 py-2 px-4 rounded-md;
+
+  .p-paginator-first,
+  .p-paginator-prev,
+  .p-paginator-next,
+  .p-paginator-last {
+    @apply bg-transparent border-0 min-w-12 h-12 m-1 transition-all duration-200 rounded-full text-gray-400;
+
+    &:not(.p-disabled):not(.p-highlight):hover {
+      @apply bg-light-100 border-0 text-gray-500;
+    }
+  }
+
+  .p-paginator-first,
+  .p-paginator-last {
+    @apply rounded-full;
+  }
+
+  .p-dropdown {
+    @apply mx-2 h-12;
+    .p-dropdown-label {
+      @apply pr-0;
+    }
+  }
+
+  .p-paginator-page-input {
+    @apply mx-2;
+    .p-inputtext  {
+      @apply max-w-12;
+    }
+  }
+
+  .p-paginator-current {
+    @apply bg-transparent border-0 text-gray-400 min-w-12 h-12 m-1 py-0 px-2;
+  }
+
+  .p-paginator-pages .p-paginator-page {
+    @apply bg-transparent border-0 text-gray-400 min-w-12 h-12 m-1 transition-all duration-200 rounded-full;
+
+    &.p-highlight {
+      @apply bg-primary border-0 text-white;
+    }
+
+    &:not(.p-highlight):hover {
+      @apply bg-light-200 border-0 text-gray-500;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.p-dialog {
+  @apply rounded-3xl border-6 border-white shadow-lg h-5/6 bg-white dark:bg-dark-50;
+
+  .p-dialog-header {
+    @apply bg-transparent text-dark-100 p-6 rounded-t-3xl border-b-0;
+
+    .title {
+      @apply font-semibold text-xl;
+    }
+    .p-dialog-header-icon {
+      @apply w-2rem h-2rem text-dark-50 border-0 bg-transparent rounded-1/2 mr-2 transition-all duration-200;
+      &:enabled:hover {
+        @apply text-dark-100 border-transparent;
+      }
+      &:focus {
+        @apply shadow-sm;
+        outline: 0 none;
+        outline-offset: 0;
+      }
+      &:last-child {
+        @apply mr-0;
+      }
+    }
+  }
+
+  .p-dialog-content {
+    @apply bg-transparent px-6 py-8 h-full;
+  }
+
+  .p-dialog-footer {
+    @apply bg-transparent border-t-0 p-6 rounded-b-xl text-dark-50 text-left;
+    button {
+      @apply m-0 mr-2 w-auto;
+    }
+  }
+
+  &.p-confirm-dialog {
+    .p-confirm-dialog-icon {
+      @apply text-3xl;
+    }
+    .p-confirm-dialog-message {
+      @apply ml-4;
+    }
+  }
+}
+
+.p-component-overlay {
+  // background-color: $black-opacity;
+  transition-duration: 0.2s;
+}

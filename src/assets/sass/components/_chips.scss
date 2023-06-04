@@ -1,0 +1,58 @@
+.p-chip {
+  @apply bg-gray-300 text-gray-600 rounded-full py-2 px-4;
+
+  .p-chip-text {
+    @apply leading-6 my-1;
+  }
+
+  .p-chip-icon {
+    @apply mr-2;
+  }
+
+  .p-chip-remove-icon {
+    @apply ml-2 rounded-md transition-all duration-200;
+    &:focus {
+      @apply shadow-md;
+      outline: 0 none;
+      outline-offset: 0;
+    }
+  }
+
+  img {
+    @apply w-8 h-8 ml--2 mr-2;
+  }
+}
+
+.p-chips {
+  .p-chips-multiple-container {
+    @apply py-1 px-4 text-xs;
+
+    &:not(.p-disabled) {
+      &:hover  {
+        @apply border-primary;
+      }
+      &.p-focus {
+        outline: 0 none;
+        outline-offset: 0;
+        @apply shadow-md border-secondary;
+      }
+    }
+
+    .p-chips-token {
+      @apply bg-gray-200 rounded-16px mr-2 my-1 py-1 px-2.5 text-gray-500;
+      .p-chips-token-icon {
+        @apply ml-2;
+      }
+    }
+    .p-chips-input-token {
+      @apply py-1;
+      input {
+        @apply px-4 py-1 bg-transparent rounded-xl text-base;
+      }
+    }
+  }
+
+  &.p-invalid.p-component > .p-inputtext {
+    @apply text-red-500;
+  }
+}

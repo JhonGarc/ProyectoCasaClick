@@ -1,0 +1,241 @@
+.p-dropdown {
+  @apply transition-all duration-200 bg-gray-100 text-gray-600 rounded-xl w-full;
+  appearance: none;
+
+  &:not(.p-disabled) {
+    &:hover {
+      @apply border-2 border-primary border-solid;
+    }
+    &.p-focus {
+      @apply border-0 shadow-md;
+      outline: none !important;
+    }
+  }
+
+  &.p-dropdown-clearable .p-dropdown-label {
+    @apply pr-6;
+  }
+
+  &.p-dropdown-label {
+    @apply bg-transparent border-0;
+    &.p-placeholder {
+      @apply text-gray-500;
+    }
+    &:enabled:focus {
+      outline: 0 none;
+      box-shadow: none;
+    }
+  }
+
+  .p-dropdown-trigger  {
+    @apply bg-transparent text-gray-400 w-10 rounded-tr-xl rounded-br-xl;
+  }
+
+  .p-dropdown-clear-icon {
+    @apply text-gray-400 w-10;
+  }
+
+  &.p-invalid.p-component {
+    @apply border-red-500;
+  }
+}
+
+.p-dropdown-panel {
+  @apply bg-white shadow-md border-0 rounded-lg text-gray-500;
+
+  .p-dropdown-header {
+    @apply py-4 px-6 bg-transparent m-0 border-b text-gray-500;
+
+    .p-dropdown-filter {
+      padding-right: 1.75rem;
+      margin-right: -1.75rem;
+    }
+
+    .p-dropdown-filter-icon  {
+      @apply text-gray-500;
+      right: 0.5rem;
+    }
+  }
+
+  .p-dropdown-items {
+    @apply py-4 px-6;
+
+    .p-dropdown-item {
+      @apply m-0 py-3 bg-transparent transition-all duration-200 text-gray-500;
+      &.p-highlight {
+        @apply text-gray-500 bg-light-100;
+      }
+      &:not(.p-highlight):not(.p-disabled):hover {
+        @apply text-gray-500 bg-light-300;
+      }
+    }
+
+    .p-dropdown-item-group {
+      @apply m-0 py-3 px-5 font-bold text-gray-500 bg-white;
+    }
+
+    .p-dropdown-empty-message {
+      @apply text-gray-500 py-3 px-5 bg-transparent;
+    }
+  }
+}
+
+.p-input-filled {
+  .p-dropdown {
+    @apply bg-gray-500;
+    &:not(.p-disabled) {
+      &:hover {
+        @apply bg-gray-400;
+      }
+      &.p-focus {
+        @apply bg-white;
+
+        .p-inputtext {
+          @apply bg-transparent;
+        }
+      }
+    }
+  }
+}
+
+// MULTISELECT
+
+.p-multiselect {
+  @apply transition-all duration-200 bg-gray-100 text-gray-600 rounded-xl w-full;
+  appearance: none;
+
+  &:not(.p-disabled) {
+    &:hover {
+      @apply border-2 border-primary border-solid;
+    }
+    &.p-focus {
+      @apply border-0 shadow-md;
+      outline: none !important;
+    }
+  }
+
+  .p-multiselect-label {
+    @apply bg-transparent border-0 transition-all duration-200 p-3;
+    &.p-placeholder {
+      @apply text-gray-500;
+    }
+    &:enabled:focus {
+      outline: 0 none;
+      box-shadow: none;
+    }
+  }
+
+  &.p-multiselect-chip {
+    .p-multiselect-token {
+      @apply mr-2 py-1 px-3 rounded-xl bg-gray-100 text-gray-500;
+      .p-multiselect-token-icon {
+        @apply ml-2;
+      }
+    }
+  }
+
+  .p-multiselect-trigger {
+    @apply bg-transparent text-gray-500 w-12 rounded-t-r-xl rounded-b-r-xl;
+  }
+
+  &.p-invalid.p-component {
+    @apply border-1 border-red-500;
+  }
+}
+
+.p-inputwrapper-filled.p-multiselect.p-multiselect-chip .p-multiselect-label {
+  @apply py-1 px-3;
+}
+
+.p-multiselect-panel {
+  @apply bg-white text-gray-500 border-0 rounded-xl shadow-md;
+
+  .p-dropdown-header {
+    @apply py-4 px-6 bg-transparent m-0 border-b text-gray-500;
+
+    .p-dropdown-filter {
+      padding-right: 1.75rem;
+      margin-right: -1.75rem;
+    }
+
+    .p-dropdown-filter-icon  {
+      @apply text-gray-500;
+      right: 0.5rem;
+    }
+  }
+
+  .p-multiselect-header {
+    @apply py-4 px-6 bg-transparent m-0 border-b rounded-xl text-gray-500;
+
+    .p-multiselect-filter-container {
+      .p-inputtext {
+        @apply pr-7;
+      }
+
+      .p-multiselect-filter-icon {
+        @apply text-gray-500;
+        right: 0.75rem;
+      }
+    }
+    .p-checkbox {
+      @apply mr-2;
+    }
+    .p-multiselect-close {
+      @apply ml-2 w-8 h-8 text-gray-500 border-0 bg-transparent rounded-full transition-all duration-200;
+
+      &:enabled:hover {
+        @apply text-gray-500 border-transparent bg-gray-200;
+      }
+
+      &:focus {
+        @apply shadow-md;
+        outline: 0 none;
+        outline-offset: 0;
+      }
+    }
+  }
+
+  .p-multiselect-items {
+    @apply py-3 px-0;
+
+    .p-multiselect-item {
+      @apply m-0 py-3 px-5 border-0 text-gray-500 bg-transparent transition-all duration-200;
+      &.p-highlight {
+        @apply text-gray-700 bg-gray-200;
+      }
+      &:not(.p-highlight):not(.p-disabled):hover {
+        @apply text-gray-500 bg-gray-100;
+      }
+      &:focus {
+        @apply shadow-md;
+        outline: 0 none;
+        outline-offset: 0;
+      }
+      .p-checkbox {
+        @apply mr-2;
+      }
+    }
+
+    .p-multiselect-item-group {
+      @apply m-0 py-3 px-5 text-gray-500 bg-white font-bold;
+    }
+
+    .p-multiselect-empty-message {
+      @apply py-3 px-5 text-gray-500 bg-transparent;
+    }
+  }
+}
+
+.p-input-filled {
+  .p-multiselect {
+    @apply bg-gray-300;
+    &:not(.p-disabled) {
+      &:hover {
+        @apply bg-gray-200;
+      }
+      &.p-focus {
+        @apply bg-gray-100;
+      }
+    }
+  }
+}

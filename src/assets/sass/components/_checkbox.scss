@@ -1,0 +1,95 @@
+.p-radiobutton {
+  @apply w-20px h-20px;
+
+  &:focus {
+    outline: 0 none;
+  }
+
+  &.p-invalid > .p-radiobutton-box {
+    @apply border-red-500;
+  }
+
+  .p-radiobutton-box {
+    @apply bg-white w-20px h-20px text-primary rounded-1/2 border-2 border-gray-300 transition-all duration-200;
+
+    &:not(.p-disabled) {
+      &:not(.p-highlight):hover {
+        @apply border-primary;
+      }
+      &.p-focus {
+        outline: 0 none;
+        outline-offset: 0;
+        @apply border-primary shadow-sm;
+      }
+    }
+
+    .p-radiobutton-icon {
+      @apply w-12px h-12px duration-200 bg-primary;
+    }
+
+    .p-highlight {
+      @apply bg-primary border-primary;
+      &:not(.p-disabled):hover {
+        @apply bg-primary border-primary text-gray-800;
+      }
+    }
+  }
+}
+
+.p-field-checkbox,
+.p-field-radiobutton {
+  @apply mb-4 flex items-center;
+}
+
+.p-field-checkbox > label,
+.p-field-radiobutton > label {
+  @apply ml-2 leading-none;
+}
+// .p-input-filled .p-radiobutton .p-radiobutton-box {
+//   background-color: #f8f9fa;
+// }
+// .p-input-filled .p-radiobutton .p-radiobutton-box:not(.p-disabled):hover {
+//   background-color: #f8f9fa;
+// }
+// .p-input-filled .p-radiobutton .p-radiobutton-box.p-highlight {
+//   background: #ffc107;
+// }
+// .p-input-filled
+//   .p-radiobutton
+//   .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
+//   background: #d29d00;
+// }
+
+.p-checkbox {
+  @apply w-20px h-20px;
+
+  .p-checkbox-box {
+    @apply border-1 bg-white text-gray-500 rounded-xl transition-all duration-200;
+
+    .p-checkbox-icon {
+      @apply duration-200 text-primary text-base;
+    }
+
+    &.p-highlight {
+      @apply border-1 border-primary bg-white text-primary;
+    }
+  }
+
+  &:not(.p-checkbox-disabled) .p-checkbox-box {
+    &.p-highlight:hover {
+      @apply border-1 border-primary bg-white text-primary;
+    }
+    &:hover {
+      @apply border-1 border-primary;
+    }
+    &.p-focus {
+      @apply shadow-md border-1 border-primary;
+      outline: 0 none;
+      outline-offset: 0;
+    }
+  }
+
+  .p-invalid > .p-checkbox-box {
+    @apply border-1 border-primary;
+  }
+}

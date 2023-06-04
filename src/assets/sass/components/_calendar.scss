@@ -1,0 +1,200 @@
+.p-datepicker {
+  @apply p-2 bg-white border-1 rounded-xl;
+
+  &:not(.p-datepicker-inline) {
+    @apply bg-white border-0 shadow-md;
+
+    .p-datepicker-header {
+      @apply bg-white;
+    }
+  }
+  .p-datepicker-header {
+    @apply bg-white p-2 font-semibold m-0 text-gray-400 border-b-1 rounded-tr-xl rounded-tl-xl;
+
+    .p-datepicker-prev,
+    .p-datepicker-next {
+      @apply w-8 h-8 border-0 bg-transparent text-gray-400 rounded-full transition-all duration-200;
+
+      &:enabled:hover {
+        @apply bg-gray-200 border-transparent text-gray-400;
+      }
+
+      &:focus {
+        @apply shadow-md;
+        outline: 0 none;
+        outline-offset: 0;
+      }
+    }
+
+    .p-datepicker-title {
+      @apply leading-loose;
+      .p-datepicker-month,
+      .p-datepicker-year {
+        @apply transition-all duration-200 font-semibold p-2 text-gray-400;
+      }
+      .p-datepicker-month {
+        @apply mr-2;
+      }
+    }
+  }
+
+  table {
+    @apply text-base my-2 mx-0;
+    th {
+      @apply p-2;
+      & > span {
+        @apply w-10 h-10;
+      }
+    }
+    td {
+      @apply p-2;
+      & > span {
+        @apply w-10 h-10 rounded-full transition-all duration-200 border-1;
+
+        &.p-highlight {
+          @apply bg-gray-200 text-gray-400;
+        }
+
+        &:focus {
+          @apply shadow-md;
+          outline: 0 none;
+          outline-offset: 0;
+        }
+      }
+
+      &.p-datepicker-today > span {
+        @apply border-transparent bg-secondary text-white;
+        &.p-highlight {
+          @apply bg-gray-200 text-gray-400;
+        }
+      }
+    }
+  }
+
+  .p-datepicker-buttonbar {
+    @apply py-4 px-0 border-t-1;
+
+    .p-button {
+      @apply w-auto;
+    }
+  }
+
+  .p-timepicker {
+    @apply border-t-1 p-2;
+
+    button {
+      @apply w-8 h-8 border-0 text-gray-400 bg-transparent rounded-full transition-all duration-200;
+
+      &:enabled:hover {
+        @apply border-transparent bg-gray-200 text-gray-400;
+      }
+
+      &:focus {
+        outline: 0 none;
+        outline-offset: 0;
+        @apply shadow-md;
+      }
+
+      &:last-child {
+        @apply mt-1;
+      }
+    }
+
+    span {
+      @apply text-xl;
+    }
+
+    & > div {
+      @apply py-0 px-2;
+    }
+  }
+
+  &.p-datepicker-timeonly .p-timepicker {
+    @apply border-t-0;
+  }
+
+  .p-monthpicker {
+    @apply my-2 mx-0;
+
+    .p-monthpicker-month {
+      @apply py-2 transition-all duration-200 rounded-md;
+      &.p-highlight {
+        @apply bg-gray-200 text-gray-600;
+      }
+    }
+  }
+
+  .p-yearpicker {
+    @apply my-2 mx-0;
+
+    .p-yearpicker-year {
+      @apply py-2 transition-all duration-200 rounded-md;
+      &.p-highlight {
+        @apply bg-gray-200 text-gray-600;
+      }
+    }
+  }
+
+  &.p-datepicker-multiple-month {
+    .p-datepicker-group {
+      @apply border-r-1 px-2 py-0;
+
+      &:first-child {
+        @apply pl-0 border-l-0;
+      }
+
+      &:last-child {
+        @apply pr-0 border-r-0;
+      }
+    }
+  }
+
+  &:not(.p-disabled) {
+    table td span:not(.p-highlight):not(.p-disabled) {
+      &:hover {
+        @apply bg-gray-200;
+      }
+      &:focus {
+        @apply shadow-md;
+        outline: 0 none;
+        outline-offset: 0;
+      }
+    }
+
+    .p-monthpicker .p-monthpicker-month:not(.p-highlight):not(.p-disabled) {
+      &:hover {
+        @apply bg-gray-200;
+      }
+
+      &:focus {
+        @apply shadow-md;
+        outline: 0 none;
+        outline-offset: 0;
+      }
+    }
+
+    .p-yearpicker .p-yearpicker-year:not(.p-highlight):not(.p-disabled) {
+      &:hover {
+        @apply bg-gray-200;
+      }
+
+      &:focus {
+        @apply shadow-md;
+        outline: 0 none;
+        outline-offset: 0;
+      }
+    }
+  }
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month:enabled:hover {
+  @apply text-secondary;
+}
+
+@media screen and (max-width: 769px) {
+  .p-datepicker table th,
+  .p-datepicker table td {
+    @apply p-0;
+  }
+}

@@ -1,0 +1,72 @@
+label {
+  font-family: 'Quicksand', sans-serif;
+  @apply font-bold;
+}
+
+.p-inputtext {
+  @apply px-4 py-3 bg-gray-100 rounded-xl text-base w-full transition-all duration-200;
+  font-family: 'Motserrat', sans-serif;
+
+  &:enabled {
+    &:hover {
+      @apply border-2 border-primary border-solid;
+    }
+    &:focus,
+    &:focus-visible {
+      @apply border-0 shadow-md;
+      outline: none !important;
+    }
+  }
+
+  &.p-invalid {
+    @apply border-2 border-solid border-red-400;
+  }
+}
+
+.p-input-icon-right {
+  & > i:last-of-type {
+    @apply right-3 text-gray-500;
+  }
+
+  & > .p-inputtext {
+    @apply pr-10;
+  }
+}
+
+.p-inputgroup-addon {
+  background: #e9ecef;
+  color: #6c757d;
+  border-top: 1px solid #ced4da;
+  border-left: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+  padding: 0.5rem 0.5rem;
+  min-width: 2.357rem;
+}
+
+.p-password {
+  @apply w-full;
+
+  &.p-invalid.p-component > .p-inputtext {
+    @apply border-2 border-red-500;
+  }
+}
+
+.p-password-panel {
+  @apply p-5 bg-white text-gray-500 border-0 shadow-md rounded-xl;
+
+  .p-password-meter {
+    @apply my-2 bg-gray-50;
+
+    .p-password-strength {
+      &.weak {
+        @apply bg-red-500;
+      }
+      &.medium {
+        @apply bg-yellow-500;
+      }
+      &.strong {
+        @apply bg-emerald-500;
+      }
+    }
+  }
+}

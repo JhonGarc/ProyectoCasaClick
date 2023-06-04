@@ -1,0 +1,60 @@
+/* * * * * * * * * * * * * * * * * */
+/*              AVATAR             */
+/* * * * * * * * * * * * * * * * * */
+
+.p-avatar {
+  @apply rounded-xl bg-light-700 font-bold;
+
+  &.p-avatar-lg {
+    @apply w-12 h-12 text-lg;
+  }
+  &.p-avatar-xl {
+    @apply w-24 h-24 text-2xl;
+    .p-avatar-icon {
+      @apply text-2xl;
+    }
+  }
+}
+
+.p-avatar-group .p-avatar {
+  @apply mx-1 shadow-md;
+}
+
+/* * * * * * * * * * * * * * * * * */
+/*           PROGRESSBAR           */
+/* * * * * * * * * * * * * * * * * */
+
+.p-progressbar {
+  @apply border-0 h-3 bg-gray-100 rounded-xl;
+  .p-progressbar-value {
+    @apply border-0 m-0 bg-primary;
+  }
+  .p-progressbar-label {
+    @apply text-white leading-6;
+  }
+}
+
+/* * * * * * * * * * * * * * * * * */
+/*               TAG               */
+/* * * * * * * * * * * * * * * * * */
+
+.p-tag {
+  @apply bg-primary text-xs text-white font-semibold py-2 px-4 rounded-xl;
+
+  &.p-tag-success {
+    @apply text-white bg-teal-500;
+  }
+  &.p-tag-info {
+    @apply text-white bg-blue-500;
+  }
+  &.p-tag-warning {
+    @apply text-white bg-amber-500;
+  }
+  &.p-tag-danger {
+    @apply text-white bg-red-500;
+  }
+
+  .p-tag-icon {
+    @apply mr-2 text-xs;
+  }
+}

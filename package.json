@@ -1,0 +1,47 @@
+{
+  "name": "vite-romarin",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "extract-translations": "npx vue-i18n-extract",
+    "remove-translations": "npx vue-i18n-extract --remove"
+  },
+  "dependencies": {
+    "@vueuse/core": "^9.5.0",
+    "axios": "^1.1.3",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.29.2",
+    "vue": "^3.2.45",
+    "vue-cookies": "^1.8.2",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.6",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@iconify/json": "^2.1.139",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "@vitejs/plugin-vue": "^3.2.0",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.7.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.56.1",
+    "typescript": "^4.9.3",
+    "unplugin-icons": "^0.14.13",
+    "unplugin-vue-components": "^0.22.9",
+    "vite": "^3.2.4",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-pages": "^0.27.1",
+    "vite-plugin-vue-layouts": "^0.7.0",
+    "vite-plugin-windicss": "^1.8.8",
+    "vue-eslint-parser": "^9.1.0",
+    "vue-i18n-extract": "^2.0.7",
+    "vue-tsc": "^0.28.10",
+    "windicss": "^3.5.6"
+  }
+}
