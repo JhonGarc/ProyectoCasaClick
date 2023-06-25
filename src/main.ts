@@ -4,6 +4,7 @@ import App from './App.vue'
 import router from './router'
 import i18n from './plugins/i18n'
 import PrimeVue from './plugins/prime'
+import './services/firebase'
 
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'

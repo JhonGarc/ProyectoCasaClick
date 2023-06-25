@@ -2,19 +2,34 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { ref } from 'vue'
-import { signInWithEmailAndPassword, getAuth } from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 const auth = getAuth()
 
-var email = ref('')
-var password = ref('')
-
-const login = async () => {
-  try {
-    signInWithEmailAndPassword(auth, email.value, password.value)
-    console.log('bienvenido')
-  } catch (error) {
-    console.log('No se pudo iniciar sesión')
-  }
+const formData = ref<{
+  email: string
+  password: string
+}>({
+  email: '',
+  password: '',
+})
+function login() {
+  console.log(formData.value)
+  signInWithEmailAndPassword(auth, formData.value.email, formData.value.password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user
+      console.log('acceso permitido', user)
+      alert('bienvenido' + user.email)
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code
+      const errorMessage = error.message
+      console.log(errorMessage)
+      console.log(errorCode)
+      alert('Credenciales incorrectas')
+      // ..
+    })
 }
 </script>
 
@@ -39,10 +54,10 @@ const login = async () => {
           <div class="mx-auto w-165.8 top-10 absolute">
             <img src="@/assets/images/titulocasaclick2.png" alt="" class="mt-10 ml-20 w-110" />
             <p class="mt-15 ml-70 text-white text-6xl">Iniciar sesión</p>
-            <form class="space-y-6">
+            <form class="space-y-6" @submit.prevent>
               <div class="w-10 ml-70 mt-7">
                 <label for="correo" class="text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]">Correo</label>
-                <InputText class="p-inputtext-lg" v-model="email" type="text" />
+                <InputText class="p-inputtext-lg" v-model="formData.email" type="text" />
               </div>
               <div class="ml-70">
                 <div class="flex items-center justify-between">
@@ -51,7 +66,7 @@ const login = async () => {
                   >
                 </div>
                 <div class="card flex justify-content-center">
-                  <Password class="p-inputtext-lg" v-model="password" toggleMask :feedback="false" required />
+                  <Password class="p-inputtext-lg" v-model="formData.password" toggleMask :feedback="false" required />
                 </div>
               </div>
 

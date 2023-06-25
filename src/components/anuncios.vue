@@ -1,129 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
+defineProps<{
+  elements: any
+}>()
+
 const visible = ref(false)
-const elements = [
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la vereda santa Marta-Villavicencio',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-  {
-    img: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    precio: '$100.000.000COP',
-    dimension: '198m² ',
-    ubicacion: 'la casa de Laura',
-    baños: '3 baños',
-    habitaciones: '4 habitaciones',
-  },
-]
 </script>
 
 <template>
@@ -131,7 +13,8 @@ const elements = [
     <div>
       <Card style="width: 25.4em" class="bg-[#dff1f8]">
         <template #header>
-          <img :src="element.img" class="h-70 w-full" />
+          <img v-if="element.images" :src="element.images[0]" class="h-70 w-full" />
+          <img v-else src="https://primefaces.org/cdn/primevue/images/usercard.png" class="h-70 w-full" />
         </template>
         <template #title> {{ element.precio }} </template>
 

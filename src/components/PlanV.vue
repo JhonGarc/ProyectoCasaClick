@@ -30,7 +30,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Attendance management</p>
+            <p>Realizar publicación</p>
           </div>
           <div class="flex">
             <div>
@@ -51,7 +51,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Enployee management</p>
+            <p>Recibir consultas compradores</p>
           </div>
           <div class="flex">
             <div>
@@ -72,7 +72,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Chat support</p>
+            <p>Publicidad en la página</p>
           </div>
         </div>
 
@@ -94,7 +94,7 @@
               <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
               <path d="M10 10l4 4m0 -4l-4 4" />
             </svg>
-            <p class="line-through">Expense tracking</p>
+            <p class="line-through">Publicidad destacada en 2 paginas</p>
           </div>
           <div class="flex">
             <div>
@@ -115,7 +115,7 @@
                 <path d="M10 10l4 4m0 -4l-4 4" />
               </svg>
             </div>
-            <p class="line-through">Invoice generate</p>
+            <p class="line-through">Chat de asistencia inmobiliaria</p>
           </div>
           <div class="flex">
             <div>
@@ -136,7 +136,7 @@
                 <path d="M10 10l4 4m0 -4l-4 4" />
               </svg>
             </div>
-            <p class="line-through">Purchase Generate</p>
+            <p class="line-through">Recibir actualizaciones por correo.</p>
           </div>
           <div class="flex">
             <div>
@@ -157,7 +157,7 @@
                 <path d="M10 10l4 4m0 -4l-4 4" />
               </svg>
             </div>
-            <p class="line-through">Payroll</p>
+            <p class="line-through">Publicidad destacada en otras 2 paginas</p>
           </div>
           <div class="flex">
             <div>
@@ -178,7 +178,7 @@
                 <path d="M10 10l4 4m0 -4l-4 4" />
               </svg>
             </div>
-            <p class="line-through">App management</p>
+            <p class="line-through">Servicio de asistencia inmobiliaria</p>
           </div>
           <router-link class="btn bg-[#d1e7ef] w-60 text-[#066482]" :to="{ name: 'notList' }">{{
             $t('Comprar')
@@ -213,7 +213,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Attendance management</p>
+            <p>Realizar publicación</p>
           </div>
           <div class="flex">
             <div>
@@ -234,7 +234,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Enployee management</p>
+            <p>Recibir consultas compradores</p>
           </div>
           <div class="flex">
             <div>
@@ -255,7 +255,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Chat support</p>
+            <p>Publicidad en la página</p>
           </div>
           <div class="flex">
             <svg
@@ -274,7 +274,7 @@
               <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
               <path d="M9 12l2 2l4 -4" />
             </svg>
-            <p>Expense tracking</p>
+            <p>Publicidad destacada en 2 paginas</p>
           </div>
           <div class="flex">
             <div>
@@ -295,7 +295,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Invoice generate</p>
+            <p>Chat de asistencia inmobiliaria</p>
           </div>
           <div class="flex">
             <div>
@@ -316,7 +316,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Purchase Generate</p>
+            <p>Recibir actualizaciones por correo</p>
           </div>
         </div>
 
@@ -340,7 +340,7 @@
                 <path d="M10 10l4 4m0 -4l-4 4" />
               </svg>
             </div>
-            <p class="line-through">Payroll</p>
+            <p class="line-through">Publicidad destacada en otras 2 paginas</p>
           </div>
           <div class="flex">
             <div>
@@ -361,7 +361,7 @@
                 <path d="M10 10l4 4m0 -4l-4 4" />
               </svg>
             </div>
-            <p class="line-through">App management</p>
+            <p class="line-through">Servicio de asistencia inmobiliaria</p>
           </div>
           <router-link class="btn bg-[#d1e7ef] w-60 text-[#066482] mt-3" :to="{ name: 'notList' }">{{
             $t('Comprar')
@@ -396,7 +396,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Attendance management</p>
+            <p>Realizar publicación</p>
           </div>
           <div class="flex">
             <div>
@@ -417,7 +417,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Enployee management</p>
+            <p>Recibir consultas compradores</p>
           </div>
           <div class="flex">
             <div>
@@ -438,7 +438,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Chat support</p>
+            <p>Publicidad en la página</p>
           </div>
           <div class="flex">
             <svg
@@ -457,7 +457,7 @@
               <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
               <path d="M9 12l2 2l4 -4" />
             </svg>
-            <p>Expense tracking</p>
+            <p>Publicidad destacada en 2 paginas</p>
           </div>
           <div class="flex">
             <div>
@@ -478,7 +478,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Invoice generate</p>
+            <p>Chat de asistencia inmobiliaria</p>
           </div>
           <div class="flex">
             <div>
@@ -499,7 +499,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Purchase Generate</p>
+            <p>Recibir actualizaciones por correo</p>
           </div>
           <div class="flex">
             <div>
@@ -520,7 +520,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>Payroll</p>
+            <p>Publicidad destacada en otras 2 paginas</p>
           </div>
           <div class="flex">
             <div>
@@ -541,7 +541,7 @@
                 <path d="M9 12l2 2l4 -4" />
               </svg>
             </div>
-            <p>App management</p>
+            <p>Servicio de asistencia inmobiliaria</p>
           </div>
           <router-link class="btn bg-[#d1e7ef] w-60 text-[#066482]" :to="{ name: 'notList' }">{{
             $t('Comprar')

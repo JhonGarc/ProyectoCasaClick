@@ -1,37 +1,24 @@
 <script setup lang="ts">
+import { db } from '@/services/firebase'
+import { collection, getDocs, query } from 'firebase/firestore'
+import { onMounted, ref } from 'vue'
+
 import anuncios from '@/components/anuncios.vue'
-const products = [
-  {
-    precio: 1,
-    name: 'Jhon',
-    image: '@/assets/images/casa.jpg',
-  },
-  {
-    precio: 1,
-    name: 'Jhon',
-    image: '@/assets/images/casa.jpg',
-  },
-  {
-    precio: 1,
-    name: 'Jhon',
-    image: '@/assets/images/casa.jpg',
-  },
-  {
-    precio: 1,
-    name: 'Jhon',
-    image: '@/assets/images/casa.jpg',
-  },
-  {
-    precio: 1,
-    name: 'Jhon',
-    image: '@/assets/images/casa.jpg',
-  },
-  {
-    precio: 1,
-    name: 'Jhon',
-    image: '@/assets/images/casa.jpg',
-  },
-]
+
+const products = ref<any>([])
+
+async function getHouses() {
+  const colRef = collection(db, 'casas')
+  const querySnap = await getDocs(query(colRef))
+
+  querySnap.forEach((doc) => {
+    products.value.push(doc.data())
+  })
+}
+
+onMounted(() => {
+  getHouses()
+})
 </script>
 
 <template>
@@ -64,6 +51,7 @@ const products = [
     }}</router-link>
   </div>
   <div class="flex flex-row flex-wrap justify-start ml-8">
-    <anuncios></anuncios>
+    <anuncios :elements="products"></anuncios>
   </div>
+
 </template>
