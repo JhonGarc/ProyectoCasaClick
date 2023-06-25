@@ -7,6 +7,7 @@ import PrimeVue from './plugins/prime'
 
 import 'virtual:windi.css'
 import 'virtual:windi-devtools'
+import 'primevue/resources/themes/saga-blue/theme.css'
 
 const app = createApp(App)
 app.use(router)

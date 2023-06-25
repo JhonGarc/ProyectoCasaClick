@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Anuncios: typeof import('./src/components/anuncios.vue')['default']
+    ButtonMenu: typeof import('./src/components/utils/buttonMenu.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IAkarIconsCalculator: typeof import('~icons/akar-icons/calculator')['default']
     'IBi:dashCircle': typeof import('~icons/bi/dash-circle')['default']
@@ -15,6 +17,9 @@ declare module '@vue/runtime-core' {
     IGgAdd: typeof import('~icons/gg/add')['default']
     'IZondicons:minusOutline': typeof import('~icons/zondicons/minus-outline')['default']
     LanguageSwitcher: typeof import('./src/components/utils/LanguageSwitcher.vue')['default']
+    PlanC: typeof import('./src/components/PlanC.vue')['default']
+    Planes: typeof import('./src/components/planes.vue')['default']
+    PlanV: typeof import('./src/components/PlanV.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ToggleDark: typeof import('./src/components/utils/ToggleDark.vue')['default']
