@@ -11,7 +11,7 @@ const selectedElement = ref<any>()
 function onElementSelected(element) {
   selectedElement.value = element
   visible.value = true
-} 
+}
 </script>
 
 <template>
@@ -55,6 +55,7 @@ function onElementSelected(element) {
         <template #content>
           <div></div>
           <div>
+            <p class="mt-2 text-3xl">{{ element.nombre }}</p>
             <div class="flex">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,12 +152,12 @@ function onElementSelected(element) {
           </div>
         </template>
         <template #footer>
-          <Button class="ml-22" icon="pi" label="comprar" @click="()=>onElementSelected(element)" />
+          <Button class="ml-22" icon="pi" label="comprar" @click="() => onElementSelected(element)" />
           <Dialog v-model:visible="visible" modal header="" :style="{ width: '50vw' }">
             <div v-if="selectedElement">
-                <div v-for="(image, idx) in selectedElement.images" :key="idx">
-                  <img :src="image" class="h-70 w-full" />
-                </div>
+              <div v-for="(image, idx) in selectedElement.images" :key="idx">
+                <img :src="image" class="h-90 w-full" />
+              </div>
             </div>
           </Dialog>
         </template>
