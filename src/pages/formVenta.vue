@@ -87,130 +87,133 @@ async function uploadHouse() {
 }
 </script>
 <template>
-  <p>Publica tu propiedad</p>
-  <p>Recuerda que despues de publicado no se podran hacer modificaciones</p>
   <div class="bg-[#d9d9d9]">
-    <div class="">
-      <div class="flex">
-        <div class="">
-          <div class="flex min-h-full flex-col lg:px-8">
-            <div class="mt-8 w-150">
-              <form class="space-y-6" @submit.prevent>
-                <div>
-                  <label for="nombre" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
-                    >Nombre</label
-                  >
-                  <div class="mt-2">
-                    <input
-                      id="nombre"
-                      v-model="formData.nombre"
-                      name="nombre"
-                      type="text"
-                      required
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+    <p class="text-[#004c76] text-7xl ml-140 mt-10">Publica tu propiedad</p>
+    <p class="bg-[#7ec8df] text-lg w-max border rounded-lg ml-155 mb-10 mt-6">
+      Recuerda que despues de publicado no se podran hacer modificaciones
+    </p>
+    <div class="bg-[#d9d9d9] border rounded-lg flex">
+      <div class="">
+        <div class="flex">
+          <div class="">
+            <div class="flex min-h-full flex-col lg:px-8">
+              <div class="mt-8 w-150">
+                <form class="space-y-6" @submit.prevent>
+                  <div>
+                    <label for="nombre" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
+                      >Nombre</label
+                    >
+                    <div class="mt-2">
+                      <input
+                        id="nombre"
+                        v-model="formData.nombre"
+                        name="nombre"
+                        type="text"
+                        required
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label for="precio" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
+                      >Precio</label
+                    >
+                    <div class="mt-2">
+                      <input
+                        id="precio"
+                        v-model="formData.precio"
+                        name="precio"
+                        type="text"
+                        required
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label for="ubicacion" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
+                      >Ubicación</label
+                    >
+                    <div class="mt-2">
+                      <input
+                        id="ubicacion"
+                        v-model="formData.ubicacion"
+                        name="ubicacion"
+                        type="text"
+                        required
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label for="habitaciones" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
+                      >Habitaciones</label
+                    >
+                    <div class="mt-2">
+                      <input
+                        id="habitaciones"
+                        v-model="formData.habitaciones"
+                        name="habitaciones"
+                        type="text"
+                        required
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label for="dimension" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
+                      >Dimesion</label
+                    >
+                    <div class="mt-2">
+                      <input
+                        id="dimension"
+                        v-model="formData.dimension"
+                        name="dimension"
+                        type="text"
+                        required
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label for="baños" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
+                      >Baños</label
+                    >
+                    <div class="mt-2">
+                      <input
+                        id="baños"
+                        v-model="formData.baños"
+                        name="baños"
+                        type="string"
+                        required
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div class="card flex justify-content-center">
+                    <FileUpload
+                      mode="basic"
+                      name="demo[]"
+                      @select="onImageUpload"
+                      accept="image/*"
+                      multiple
+                      :maxFileSize="2000000"
+                      :showUploadButton="false"
+                      :showCancelButton="false"
+                      :chooseLabel="'Selecciona el archivo jpg/png'"
                     />
                   </div>
-                </div>
-                <div>
-                  <label for="precio" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
-                    >Precio</label
-                  >
-                  <div class="mt-2">
-                    <input
-                      id="precio"
-                      v-model="formData.precio"
-                      name="precio"
-                      type="text"
-                      required
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
+                  <div class="ml-20">
+                    <button
+                      :disabled="isLoading"
+                      type="button"
+                      @click="uploadHouse"
+                      class="flex w-110 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                      {{ isLoading ? 'Cargando...' : 'Registrar' }}
+                    </button>
                   </div>
-                </div>
-                <div>
-                  <label for="ubicacion" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
-                    >Ubicación</label
-                  >
-                  <div class="mt-2">
-                    <input
-                      id="ubicacion"
-                      v-model="formData.ubicacion"
-                      name="ubicacion"
-                      type="text"
-                      required
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label for="habitaciones" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
-                    >Habitaciones</label
-                  >
-                  <div class="mt-2">
-                    <input
-                      id="habitaciones"
-                      v-model="formData.habitaciones"
-                      name="habitaciones"
-                      type="text"
-                      required
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label for="dimension" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
-                    >Dimesion</label
-                  >
-                  <div class="mt-2">
-                    <input
-                      id="dimension"
-                      v-model="formData.dimension"
-                      name="dimension"
-                      type="text"
-                      required
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label for="baños" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
-                    >Baños</label
-                  >
-                  <div class="mt-2">
-                    <input
-                      id="baños"
-                      v-model="formData.baños"
-                      name="baños"
-                      type="string"
-                      required
-                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div class="card flex justify-content-center">
-                  <FileUpload
-                    mode="basic"
-                    name="demo[]"
-                    @select="onImageUpload"
-                    accept="image/*"
-                    multiple
-                    :maxFileSize="2000000"
-                    :showUploadButton="false"
-                    :showCancelButton="false"
-                    :chooseLabel="'Selecciona el archivo jpg/png'"
-                  />
-                </div>
-                <div class="ml-50">
-                  <button
-                    :disabled="isLoading"
-                    type="button"
-                    @click="uploadHouse"
-                    class="flex w-110 justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  >
-                    {{ isLoading ? 'Cargando...' : 'Registrar' }}
-                  </button>
-                </div>
-              </form>
-              <!-- <form class="space-y-6" action="#" method="POST">
+                </form>
+                <!-- <form class="space-y-6" action="#" method="POST">
                 <div>
                   <label for="Nombres" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
                     >Nombres</label
@@ -389,9 +392,13 @@ async function uploadHouse() {
                   />
                 </div>
               </form> -->
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <img src="@/assets/images/gif3d.gif" alt="" class="w-full ml-40 mt-23" />
       </div>
     </div>
   </div>

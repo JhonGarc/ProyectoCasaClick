@@ -9,6 +9,33 @@ const visible = ref(false)
 </script>
 
 <template>
+  <div class="flex flex-col w-full">
+    <div class="bg-[#d9d9d9] mx-19 my-4 rounded-lg">
+      <p class="mb-3 ml-3">Las más vistas</p>
+      <div class="card">
+        <Carousel :value="elements" :numVisible="3" :numScroll="1" circular :autoplayInterval="3000">
+          <template #item="products">
+            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+              <div class="mb-3">
+                <img :src="products.data.images[2]" class="h-70 w-full" />
+              </div>
+              <div>
+                <h4 class="mb-1">{{ products.data.precio }}</h4>
+                <div class="mt-5">
+                  <Button icon="pi pi-search" rounded class="mr-2" />
+                  <Button icon="pi pi-star-fill" rounded severity="success" class="mr-2" />
+                  <Button icon="pi pi-cog" rounded severity="help" />
+                </div>
+              </div>
+            </div>
+          </template>
+        </Carousel>
+      </div>
+    </div>
+    <router-link class="btn bg-[#ffa945] w-60 ml-7 mb-3" :to="{ name: 'formVenta' }">{{
+      $t('Publica tu anuncio aquí')
+    }}</router-link>
+  </div>
   <div v-for="(element, index) in elements" :key="index" class="mx-7 my-2">
     <div>
       <Card style="width: 25.4em" class="bg-[#dff1f8]">
@@ -43,7 +70,7 @@ const visible = ref(false)
                 <path d="M21 12l-2 -2l-2 2" />
                 <path d="M3 10m0 2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2z" />
               </svg>
-              <p>{{ element.dimension }} <br /></p>
+              <p>{{ element.dimension }} m² <br /></p>
             </div>
             <div class="flex">
               <svg
@@ -85,7 +112,7 @@ const visible = ref(false)
                 <path d="M4 21l1 -1.5" />
                 <path d="M20 21l-1 -1.5" />
               </svg>
-              <p class="mt-2">{{ element.baños }}</p>
+              <p class="mt-2">{{ element.baños }} baños</p>
             </div>
             <div class="flex ml-3">
               <svg
@@ -112,26 +139,26 @@ const visible = ref(false)
                   fill="currentColor"
                 />
               </svg>
-              <p class="mt-2">{{ element.habitaciones }}</p>
+              <p class="mt-2">{{ element.habitaciones }} habitaciones</p>
             </div>
           </div>
         </template>
         <template #footer>
           <Button class="ml-22" icon="pi" label="comprar" @click="visible = true" />
-          <Dialog v-model:visible="visible" modal header="Header" :style="{ width: '50vw'}">
-            <p>gola goosdamdmasdmkmxczc</p>
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
-            <img src="https://primefaces.org/cdn/primevue/images/usercard.png" />
+          <Dialog v-model:visible="visible" modal header="" :style="{ width: '50vw' }">
+            <div v-for="(element, index) in elements" :key="index">
+              <div v-for="(elementss, idx) in element.images" :key="idx">
+                <img :src="elementss" class="h-70 w-full" />
+              </div>
+            </div>
           </Dialog>
         </template>
       </Card>
+    </div>
+  </div>
+  <div v-for="(element, index) in elements" :key="index">
+    <div v-for="(image, idx) in element.images" :key="idx">
+      <img :src="image" class="h-70 w-full" />
     </div>
   </div>
 </template>

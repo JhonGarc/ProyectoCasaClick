@@ -22,6 +22,7 @@ function register() {
       // Signed in
       const user = userCredential.user
       console.log(user)
+      alert('usuario creado' + ' ' + user.email)
       // ...
     })
     .catch((error) => {
@@ -29,6 +30,7 @@ function register() {
       const errorMessage = error.message
       console.log(errorMessage)
       console.log(errorCode)
+      alert(errorMessage)
       // ..
     })
 }
@@ -193,20 +195,34 @@ function register() {
                 </div>
                 <div>
                   <label for="precio" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
-                    >Precio</label
+                    >Contraseña</label
                   >
-                  <div class="mt-2">
+                  <!-- <div class="mt-2">
                     <input
                       id="precio"
                       v-model="formData.password"
                       name="precio"
-                      type="text"
+                      type="password"
+                      required
+                      class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    /> -->
+                  <Password id="precio" name="precio" v-model="formData.password" type="password" requiredtoggleMask />
+                </div>
+                <div>
+                  <label for="precio" class="block text-sm font-medium leading-6 text-gray-900 text-[#a8a8b1]"
+                    >Confirmar Contraseña</label
+                  >
+                  <div class="mt-2">
+                    <input
+                      id="precio"
+                      name="precio"
+                      type="password"
                       required
                       class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
                   </div>
                 </div>
-                <div class="ml-50">
+                <div class="ml-20">
                   <button
                     type="button"
                     @click="register"
