@@ -17,9 +17,6 @@
           <router-link :to="{ name: 'planes' }">{{ $t('Planes') }}</router-link>
         </li>
         <li class="ml-10 mt-7 text-[#006086]">
-          <router-link :to="{ name: 'notList' }">{{ $t('SitioConstrucción') }}</router-link>
-        </li>
-        <li class="ml-10 mt-7 text-[#006086]">
           <router-link :to="{ name: 'anuncios' }">{{ $t('Anuncios') }}</router-link>
         </li>
       </ul>

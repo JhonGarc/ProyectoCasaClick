@@ -19,7 +19,7 @@ function login() {
       // Signed in
       const user = userCredential.user
       console.log('acceso permitido', user)
-      alert('bienvenido' + user.email)
+      alert('bienvenido' + ' ' + user.email)
       // ...
     })
     .catch((error) => {

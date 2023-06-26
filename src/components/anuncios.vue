@@ -6,6 +6,12 @@ defineProps<{
 }>()
 
 const visible = ref(false)
+const selectedElement = ref<any>()
+
+function onElementSelected(element) {
+  selectedElement.value = element
+  visible.value = true
+} 
 </script>
 
 <template>
@@ -18,6 +24,7 @@ const visible = ref(false)
             <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
               <div class="mb-3">
                 <img :src="products.data.images[2]" class="h-70 w-full" />
+                <p class="text-xl">{{ products.data.nombre }}</p>
               </div>
               <div>
                 <h4 class="mb-1">{{ products.data.precio }}</h4>
@@ -144,21 +151,16 @@ const visible = ref(false)
           </div>
         </template>
         <template #footer>
-          <Button class="ml-22" icon="pi" label="comprar" @click="visible = true" />
+          <Button class="ml-22" icon="pi" label="comprar" @click="()=>onElementSelected(element)" />
           <Dialog v-model:visible="visible" modal header="" :style="{ width: '50vw' }">
-            <div v-for="(element, index) in elements" :key="index">
-              <div v-for="(elementss, idx) in element.images" :key="idx">
-                <img :src="elementss" class="h-70 w-full" />
-              </div>
+            <div v-if="selectedElement">
+                <div v-for="(image, idx) in selectedElement.images" :key="idx">
+                  <img :src="image" class="h-70 w-full" />
+                </div>
             </div>
           </Dialog>
         </template>
       </Card>
-    </div>
-  </div>
-  <div v-for="(element, index) in elements" :key="index">
-    <div v-for="(image, idx) in element.images" :key="idx">
-      <img :src="image" class="h-70 w-full" />
     </div>
   </div>
 </template>
